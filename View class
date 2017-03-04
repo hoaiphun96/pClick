@@ -1,0 +1,83 @@
+public class View {
+  private Model model1;
+  private Controller controller1;
+  private Jtable classtable;
+  private int numsession;
+  private int numquestion;
+  
+
+public View(Model m) {
+  this.model1=m;
+  String[] column = {"Class"};
+  //actual data for the table 
+        Object[][] data = new Object[][] {
+            {"CS141"},
+            {"CS142"},
+            {"CS214"},
+        };
+        
+    //create table with data
+       classtable= new JTable(data, column);
+         
+        //add the table to the frame
+        this.add(new JScrollPane(table));
+         
+        this.setTitle("Classes");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
+        this.pack();
+        this.setVisible(true);
+
+    
+}
+  
+ public void drawsessiontable(String ClassID)
+    String[] columns = {ClassID+ " session"};
+  //actual data for the table 
+        Object[][] datas = new Object[][] ; 
+        //get the number of session for this class
+        numsession=model1.ClassID.numsession;
+        //fill the row with Session number
+        for (int row=1; row<=numsession;i++){
+          datas[0][row]="Session"+row;
+          }         
+        
+        
+    //create table with data
+       classtable= new JTable(datas, columns);
+         
+        //add the table to the frame
+        this.add(new JScrollPane(table));
+         
+        this.setTitle("List of Session");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
+        this.pack();
+        this.setVisible(true);
+      
+   }
+   
+    public void drawreporttable(String ClassID, String ClassSession)
+    String[] columnss = {"Question","Report"};
+  //actual data for the table 
+        Object[][] datass = new Object[][] ; 
+        //get the number of question for this class session
+        numquestion=model1.ClassID.ClassSession.numquestion;
+        //fill the row with Session number
+        for (int row=1; row<=numquestion;i++){
+          datass[0][row]="Question"+row;
+          datass[1][row]="Open Report";
+          }         
+        
+        
+    //create table with data
+       classtable= new JTable(datass, columnss);
+         
+        //add the table to the frame
+        this.add(new JScrollPane(table));
+         
+        this.setTitle(Report");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
+        this.pack();
+        this.setVisible(true);
+      
+   }
+}
