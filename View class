@@ -2,6 +2,10 @@ public class View {
   private Model model1;
   private Controller controller1;
   private Jtable classtable;
+   private Jtable sessiontable;
+    private Jtable reporttable;
+    private JButton report;
+  private JButton session;
   private int numsession;
   private int numquestion;
   
@@ -37,13 +41,15 @@ public View(Model m) {
         //get the number of session for this class
         numsession=model1.ClassID.numsession;
         //fill the row with Session number
+        
         for (int row=1; row<=numsession;i++){
-          datas[0][row]="Session"+row;
+          session= new JButton(""Session" +row ");
+          datas[0][row]=session;
           }         
         
         
     //create table with data
-       classtable= new JTable(datas, columns);
+       sessiontable= new JTable(datas, columns);
          
         //add the table to the frame
         this.add(new JScrollPane(table));
@@ -62,14 +68,15 @@ public View(Model m) {
         //get the number of question for this class session
         numquestion=model1.ClassID.ClassSession.numquestion;
         //fill the row with Session number
+        report=new JButton("Open report");
         for (int row=1; row<=numquestion;i++){
           datass[0][row]="Question"+row;
-          datass[1][row]="Open Report";
+          datass[1][row]=report;
           }         
         
         
     //create table with data
-       classtable= new JTable(datass, columnss);
+       reporttable= new JTable(datass, columnss);
          
         //add the table to the frame
         this.add(new JScrollPane(table));
