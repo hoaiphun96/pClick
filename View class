@@ -12,6 +12,17 @@ public class View {
 
 public View(Model m) {
   this.model1=m;
+  
+  /*
+  ** DRAW CLASS TABLE WITH ONLY ONE COLUMN
+  ** ________________
+  **|Class           |
+  **|----------------|
+  **|CS141           |
+  **|----------------|
+  **|CS142           |
+  **|________________| */
+  
   String[] column = {"Class"};
   //actual data for the table 
         Object[][] data = new Object[][] {
@@ -33,7 +44,15 @@ public View(Model m) {
 
     
 }
-  
+   /*
+  ** DRAW CLASS TABLE WITH ONLY ONE COLUMN
+  ** ________________
+  **|Session         |
+  **|----------------|
+  **|Session 1       |
+  **|----------------|
+  **|Session 2       |
+  **|________________| */
  public void drawsessiontable(String ClassID)
     String[] columns = {ClassID+ " session"};
   //actual data for the table 
@@ -60,7 +79,15 @@ public View(Model m) {
         this.setVisible(true);
       
    }
-   
+    /*
+  ** DRAW CLASS TABLE WITH ONLY TWO COLUMN
+  ** ____________________________
+  **|Question        |Report     |
+  **|----------------|-----------|
+  **|Question 1      |Open Report|
+  **|----------------|-----------|
+  **|Question 2      |Open Report|
+  **|________________|___________| */
     public void drawreporttable(String ClassID, String ClassSession)
     String[] columnss = {"Question","Report"};
   //actual data for the table 
